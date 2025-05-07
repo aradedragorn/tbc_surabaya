@@ -57,7 +57,7 @@ tabs = st.tabs(["🗺️ Peta Interaktif", "📊 Statistik Model", "📋 Data Le
 with tabs[0]:
     choropleth_model = st.selectbox("Model Prediksi untuk Choropleth:", choropleth_fields)
 
-    gdf_choro['Pred_display'] = gdf_choro[choropleth_model].apply(lambda x: f"{x:.2f}" if pd.notna(x) else "N/A")
+    gdf_choro['Prediksi Display'] = gdf_choro[choropleth_model].apply(lambda x: f"{x:.2f}" if pd.notna(x) else "N/A")
 
     # Peta Choropleth
     m1 = folium.Map(location=center, zoom_start=11, tiles=None)
@@ -76,7 +76,7 @@ with tabs[0]:
     ).add_to(m1)
 
     tooltip = GeoJsonTooltip(
-        fields=["NAMOBJ",  'Pred_display'],
+        fields=["NAMOBJ",  'Prediksi Display'],
         aliases=["Kecamatan:", f"Prediksi TBC:"],
         localize=True,
         sticky=False,
