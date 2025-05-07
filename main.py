@@ -3,7 +3,7 @@ os.environ['GDAL_DATA'] = r'C:/Users/ASUS/anaconda3/envs/geo_env/Library/share/g
 
 import streamlit as st
 import numpy as np
-import geopandas as gpd
+# import geopandas as gpd
 import folium
 from folium import Choropleth, TileLayer, GeoJsonTooltip, FeatureGroup
 from folium.plugins import HeatMap
